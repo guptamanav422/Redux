@@ -7,3 +7,9 @@ export const incrementCreator=()=>{
         type:"INCREMENT",
     };
 };
+
+export const decrementCreator=()=>{
+    return{
+        type:"DECREMENT",
+    };
+};
