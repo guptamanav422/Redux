@@ -5,16 +5,20 @@ function App() {
 
   let state=useSelector((state)=>state);
 
-  let dispatch=useDispatch();
+  console.log(state);
+  // let dispatch=useDispatch();
   return (
     <>
+    {/* <button onClick={()=>{
+      dispatch(incrementCreator(1));
+    }}>INCREMENT +1</button>
     <button onClick={()=>{
-      dispatch(incrementCreator());
-    }}>INCREMENT</button>
+      dispatch(incrementCreator(10));
+    }}>INCREMENT +10</button>
     <p>{state}</p>
     <button onClick={()=>{
       dispatch(decrementCreator());
-    }}>DECREMENT</button>
+    }}>DECREMENT</button> */}
     </>
   );
 }
