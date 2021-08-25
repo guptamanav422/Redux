@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import {removeCreator} from "../Redux/actions.js"
 let Cart = () => {
 
+    let dispatch= useDispatch();
     let state= useSelector((state)=> state);
 
     let filteredArr=state.filter((el)=>el.qty>0);
@@ -27,7 +28,9 @@ let Cart = () => {
               <td>{el.price}</td>
               <td>{el.qty}</td>
               <td>RS {el.price*el.qty}</td>
-              <td><button>Remove </button></td>
+              <td><button onClick={()=>{
+                  dispatch(removeCreator(el.id))
+              }}>Remove </button></td>
               </tr>
           })}
 

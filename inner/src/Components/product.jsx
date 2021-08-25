@@ -1,6 +1,12 @@
 import "./product.css"
 import {useHistory} from "react-router-dom"
+import {addCreator} from "../Redux/actions"
+import { useDispatch } from "react-redux";
+
+
 let Product = (props) => {
+
+    let dispatch=useDispatch();
     let history =useHistory();
     return (
       <div className="product-card">
@@ -14,7 +20,9 @@ let Product = (props) => {
           />
         </div>
         <div className="product-btn">
-          <button>Add to Cart</button>
+          <button onClick={()=>{
+              dispatch(addCreator(props.data.id));
+          }}>Add to Cart</button>
         </div>
       </div>
     );

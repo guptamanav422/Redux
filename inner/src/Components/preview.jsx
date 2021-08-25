@@ -1,12 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "./preview.css";
-
+import {removeCreator} from "../Redux/actions.js"
 let Preview = () => {
 
     let {id}=useParams();
     let state=useSelector(state=>state);
     let reqObject=state[id];
+    let dispatch= useDispatch();
+
   return (
     <>
       <div className="preview-container">
@@ -24,7 +26,9 @@ let Preview = () => {
             nihil. Molestiae dolorem, voluptate eum vel deserunt commodi ut.
             Ipsa ipsam cupiditate incidunt.
           </p>
-          <button>Add to Cart</button>
+          <button onClick={()=>{
+              dispatch(removeCreator(reqObject.id))
+          }}>Add to Cart</button>
         </div>
       </div>
     </>
