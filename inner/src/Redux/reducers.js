@@ -7,21 +7,21 @@ let initialState=[
         name:"Palm Phone",
         img:"https://i.shgcdn.com/d28da852-3c05-408e-bde3-4aeb881e1a08/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
         price:10000,
-        qty:0,
+        qty:1,
     },
     {
         id:1,
         name:"Kia Car",
         img:"https://i.shgcdn.com/d28da852-3c05-408e-bde3-4aeb881e1a08/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
         price:10000,
-        qty:0,
+        qty:2,
     },
     {
         id:2,
         name:"Ps4",
         img:"https://i.shgcdn.com/d28da852-3c05-408e-bde3-4aeb881e1a08/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
-        price:10000,
-        qty:0,
+        price:20000,
+        qty:2,
     }
 ]
 

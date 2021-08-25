@@ -9,6 +9,6 @@ let myStore= createStore(reducer)
 ReactDOM.render(
   <Provider store={myStore}>
     <App />
-    </Provider>,
+  </Provider>,
   document.getElementById('root')
 );
