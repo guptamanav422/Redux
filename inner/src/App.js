@@ -1,37 +1,30 @@
-import { useDispatch, useSelector } from "react-redux";
-import {incrementCreator ,decrementCreator ,loginCreator,logoutCreator} from "./file/actions"
-function App() {
+import Navbar from "./Components/navbar";
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Cart from "./Components/cart.jsx";
+import Preview from "./Components/preview.jsx";
+import Home from "./Components/home.jsx";
 
-  let {logged,count}=useSelector((state)=>state);
-
-  let dispatch=useDispatch();
+let App = () => {
   return (
     <>
-    <button onClick={()=>{
-      dispatch(loginCreator());
-    }} >Login</button>
+      <Router>
+        <Navbar />
 
-<hr />
-    <button onClick={()=>{
-      dispatch(logoutCreator());
-    }}>Logout</button>
-    <hr />
-    {logged?
-    <>
-    <button onClick={()=>{
-      dispatch(incrementCreator(1));
-    }}>INCREMENT +1</button>
-    <button onClick={()=>{
-      dispatch(incrementCreator(10));
-    }}>INCREMENT +10</button>
-    <p>{count}</p>
-    <button onClick={()=>{
-      dispatch(decrementCreator());
-    }}>DECREMENT</button>
-    </>: ""}
+        <Switch>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+          <Route path="/preview">
+            <Preview />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
-}
+};
 
 export default App;
